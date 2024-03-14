@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 15.0, *)
 public extension AnyChangeEffect {
     /// An effect that emits the provided particles from the origin point and slowly float up while moving side to side.
     ///
@@ -27,6 +28,7 @@ public extension AnyChangeEffect {
     }
 }
 
+@available(iOS 15.0, *)
 internal struct RisingParticleSimulation<ParticlesView: View>: ViewModifier, Simulative {
     var origin: UnitPoint
 
@@ -190,6 +192,7 @@ private struct RelativeOffsetModifier: GeometryEffect {
 }
 
 #if os(iOS) && DEBUG
+@available(iOS 15.0, *)
 struct RisingParticleEffect_Previews: PreviewProvider {
     struct ButtonPreview: View {
         @State

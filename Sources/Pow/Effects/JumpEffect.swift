@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 15.0, *)
 public extension AnyChangeEffect {
     /// An effect that makes the view jump.
     ///
@@ -11,6 +12,7 @@ public extension AnyChangeEffect {
     }
 }
 
+@available(iOS 15.0, *)
 internal struct JumpSimulationModifier: ViewModifier, Simulative {
     var impulseCount: Int
 
@@ -356,6 +358,7 @@ struct RepeatingJump: PreviewProvider {
     }
 }
 
+@available(iOS 15.0, *)
 private extension AnyChangeEffect {
     static var overlay: AnyChangeEffect {
         .simulation { count in
@@ -369,11 +372,11 @@ private extension AnyChangeEffect {
         var initialVelocity: CGFloat = 0
 
         func body(content: Content) -> some View {
-            content.overlay {
+            content.overlay (
                 Text(impulseCount.formatted())
                     .padding(4)
                     .background(.blue)
-            }
+            )
         }
     }
 }

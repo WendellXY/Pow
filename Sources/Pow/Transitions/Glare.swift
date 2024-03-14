@@ -3,6 +3,7 @@ import SwiftUI
 import SnapshotPreferences
 #endif
 
+@available(iOS 15.0, *)
 public extension AnyTransition.MovingParts {
     /// A transitions that shows the view by combining a diagonal wipe with a
     /// white streak.
@@ -47,6 +48,7 @@ public extension AnyTransition.MovingParts {
     }
 }
 
+@available(iOS 15.0, *)
 internal struct Glare: ViewModifier, DebugProgressableAnimation, AnimatableModifier {
     var animatableData: CGFloat = 0
 

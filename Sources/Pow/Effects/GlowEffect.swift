@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 15.0, *)
 public extension AnyChangeEffect {
     /// An effect that highlights the view with a glow around it.
     ///
@@ -22,6 +23,7 @@ public extension AnyChangeEffect {
     }
 }
 
+@available(iOS 15.0, *)
 public extension AnyConditionalEffect {
     /// An effect that highlights the view with a glow around it.
     static var glow: AnyConditionalEffect {
@@ -42,6 +44,7 @@ public extension AnyConditionalEffect {
     }
 }
 
+@available(iOS 15.0, *)
 internal struct GlowModifier: ViewModifier, Animatable {
     var animatableData: CGFloat
 
@@ -88,6 +91,7 @@ internal struct GlowModifier: ViewModifier, Animatable {
     }
 }
 
+@available(iOS 15.0, *)
 internal struct ContinuousGlowModifier: ViewModifier, Continuous {
     var color: Color
 
@@ -110,6 +114,7 @@ internal struct ContinuousGlowModifier: ViewModifier, Continuous {
     }
 }
 
+@available(iOS 15.0, *)
 internal struct PulseGlowModifier: ViewModifier, Simulative {
     var impulseCount: Int
 
@@ -185,6 +190,7 @@ internal struct PulseGlowModifier: ViewModifier, Simulative {
 }
 
 #if os(iOS) && DEBUG
+@available(iOS 15.0, *)
 struct GlowChangeEffect_Previews: PreviewProvider {
     struct Cart: View {
         @State

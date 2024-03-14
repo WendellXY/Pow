@@ -71,7 +71,9 @@ public struct SoundEffect: Hashable, Sendable {
             }
         }
 
-        print("No sound resource named \(names.map({ "'\($0)'" }).formatted(.list(type: .and))) with type '\(type)' found in bundle \(bundle)")
+        if #available(iOS 15.0, *) {
+            print("No sound resource named \(names.map({ "'\($0)'" }).formatted(.list(type: .and))) with type '\(type)' found in bundle \(bundle)")
+        }
     }
 
     /// Create a sound effect from the specified URL.

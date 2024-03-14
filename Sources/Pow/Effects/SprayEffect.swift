@@ -5,6 +5,7 @@ import simd
 import CoreHaptics
 #endif
 
+@available(iOS 15.0, *)
 public extension AnyChangeEffect {
     /// An effect that emits multiple particles in different shades and sizes moving up from the origin point.
     ///
@@ -20,6 +21,7 @@ public extension AnyChangeEffect {
     }
 }
 
+@available(iOS 15.0, *)
 internal struct SpraySimulation<ParticleView: View>: ViewModifier, Simulative {
     var particle: ParticleView
 
@@ -277,6 +279,7 @@ private extension Angle {
 }
 
 #if os(iOS) && DEBUG
+@available(iOS 15.0, *)
 struct SprayChangeEffect_Previews: PreviewProvider {
     struct Preview: View {
         @State

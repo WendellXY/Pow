@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 15.0, *)
 public extension AnyTransition.MovingParts {
     /// The style of blinds to use with a `blinds` transition.
     enum BlindsStyle: Sendable {
@@ -30,6 +31,7 @@ public extension AnyTransition.MovingParts {
     }
 }
 
+@available(iOS 15.0, *)
 internal struct Blinds: ViewModifier, ProgressableAnimation, AnimatableModifier, Hashable {
     var slatWidth: CGFloat
 
@@ -48,6 +50,7 @@ internal struct Blinds: ViewModifier, ProgressableAnimation, AnimatableModifier,
     }
 }
 
+@available(iOS 15.0, *)
 private struct BlindsShape: Shape {
     var slatWidth: CGFloat
 
@@ -103,6 +106,7 @@ private struct BlindsShape: Shape {
 }
 
 #if os(iOS) && DEBUG
+@available(iOS 15.0, *)
 struct Blinds_Preview: PreviewableAnimation & PreviewProvider {
 
   static var animation: Blinds {

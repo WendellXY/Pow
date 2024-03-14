@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 15.0, *)
 public extension AnyChangeEffect {
     /// An effect that wiggles the view when a change happens.
     static var wiggle: AnyChangeEffect {
@@ -29,6 +30,7 @@ public extension AnyChangeEffect {
     }
 }
 
+@available(iOS 15.0, *)
 internal struct WiggleSimulationModifier: ViewModifier, Simulative {
     // TODO: Not used, remove from protocol
     var initialVelocity: CGFloat = 0
@@ -105,6 +107,7 @@ internal struct WiggleSimulationModifier: ViewModifier, Simulative {
 
 
 #if os(iOS) && DEBUG
+@available(iOS 15.0, *)
 struct WiggleEffect_Previews: PreviewProvider {
     struct Preview: View {
         @State

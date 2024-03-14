@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 15.0, *)
 public extension AnyChangeEffect {
     /// The rate of the spin effect.
     enum SpinRate {
@@ -48,6 +49,7 @@ public extension AnyChangeEffect {
     }
 }
 
+@available(iOS 15.0, *)
 internal struct SpinSimulationModifier: ViewModifier, Simulative {
     var impulseCount: Int
 
@@ -145,6 +147,7 @@ internal struct SpinSimulationModifier: ViewModifier, Simulative {
 }
 
 #if os(iOS) && DEBUG
+@available(iOS 15.0, *)
 struct SpinSimulation_Previews: PreviewProvider {
     struct Preview: View {
         @State

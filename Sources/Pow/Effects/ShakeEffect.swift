@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 15.0, *)
 public extension AnyChangeEffect {
     /// An effect that shakes the view when a change happens.
     static var shake: AnyChangeEffect {
@@ -31,6 +32,7 @@ public extension AnyChangeEffect {
     }
 }
 
+@available(iOS 15.0, *)
 internal struct ShakeSimulationModifier: ViewModifier, Simulative {
     // TODO: Not used, remove from protocol
     var initialVelocity: CGFloat = 0

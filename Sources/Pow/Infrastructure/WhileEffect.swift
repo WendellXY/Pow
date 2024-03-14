@@ -163,6 +163,7 @@ internal extension EnvironmentValues {
 }
 
 #if os(iOS) && DEBUG
+@available(iOS 15.0, *)
 struct WhileEffectPreview_Previews: PreviewProvider {
     private struct Preview: View {
         @State

@@ -96,6 +96,7 @@ internal extension EnvironmentValues {
     }
 }
 
+@available(iOS 15.0, *)
 internal extension View {
     func particleLayerBackground(alignment: Alignment = .center, layer: ParticleLayer = .local, isEnabled: Bool = true, @ViewBuilder particle: () -> some View) -> some View {
         modifier(ParticleLayerBackgroundModifier(alignment: alignment, layer: layer, isEnabled: isEnabled, particle: particle))
@@ -106,6 +107,7 @@ internal extension View {
     }
 }
 
+@available(iOS 15.0, *)
 private struct ParticleLayerBackgroundModifier<Particle: View>: ViewModifier {
     var alignment: Alignment
 
@@ -162,6 +164,7 @@ private struct ParticleLayerBackgroundModifier<Particle: View>: ViewModifier {
     }
 }
 
+@available(iOS 15.0, *)
 private struct ParticleLayerOverlayModifier<Particle: View>: ViewModifier {
     var alignment: Alignment
 

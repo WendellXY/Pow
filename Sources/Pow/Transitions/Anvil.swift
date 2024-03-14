@@ -3,6 +3,7 @@ import SwiftUI
 import SnapshotPreferences
 #endif
 
+@available(iOS 15.0, *)
 public extension AnyTransition.MovingParts {
     /// A transition that drops the view down from the top.
     ///
@@ -19,6 +20,7 @@ public extension AnyTransition.MovingParts {
     }
 }
 
+@available(iOS 15.0, *)
 internal struct Anvil: ViewModifier, ProgressableAnimation, AnimatableModifier {
     var animatableData: CGFloat = 0
 
@@ -207,6 +209,7 @@ extension EdgeInsets {
 }
 
 #if os(iOS) && DEBUG
+@available(iOS 15.0, *)
 struct Anvil_Preview: PreviewableAnimation, PreviewProvider {
   static var animation: Anvil {
     Anvil(animatableData: 0)

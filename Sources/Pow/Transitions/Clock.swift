@@ -86,12 +86,14 @@ internal struct Clock: ViewModifier, DebugProgressableAnimation, AnimatableModif
 }
 
 #if os(iOS) && DEBUG
+@available(iOS 15.0, *)
 struct Clock_Preview: PreviewableAnimation, PreviewProvider {
   static var animation: Clock {
     Clock(origin: .center, blurRadius: 0, progress: 0)
   }
 }
 
+@available(iOS 15.0, *)
 struct Clock_Previews: PreviewProvider {
     struct Item: Identifiable {
         var color: Color

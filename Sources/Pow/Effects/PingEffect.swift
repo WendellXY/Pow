@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 15.0, *)
 public extension AnyChangeEffect {
     /// An effect that adds one or more shapes that slowly grow and fade-out behind the view.
     ///

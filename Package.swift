@@ -8,9 +8,9 @@ let enablePreviews = false
 let package = Package(
     name: "Pow",
     platforms: [
-        .iOS(.v15),
-        .macOS(.v12),
-        .macCatalyst(.v15)
+        .iOS(.v14),
+        .macOS(.v11),
+        .macCatalyst(.v14),
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.

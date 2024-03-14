@@ -4,6 +4,7 @@ import simd
 import SnapshotPreferences
 #endif
 
+@available(iOS 15.0, *)
 public extension AnyConditionalEffect {
     /// An effect that emits smoke from the view.
     static var smoke: AnyConditionalEffect {
@@ -22,6 +23,7 @@ public extension AnyConditionalEffect {
     }
 }
 
+@available(iOS 15.0, *)
 private struct SmokeEffect: ViewModifier, Continuous {
     var isActive: Bool
 
@@ -173,6 +175,7 @@ private struct SmokeLayerView: ViewRepresentable {
 }
 
 #if DEBUG
+@available(iOS 15.0, *)
 struct ContinuousParticleEffect_Previews: PreviewProvider {
     private struct Preview: View {
         @State

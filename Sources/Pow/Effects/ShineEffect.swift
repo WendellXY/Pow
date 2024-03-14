@@ -73,6 +73,7 @@ internal struct ShineModifier: ViewModifier, Animatable {
 }
 
 #if os(iOS) && DEBUG
+@available(iOS 15.0, *)
 struct ShineChangeEffect_Previews: PreviewProvider {
     struct Cart: View {
         @State

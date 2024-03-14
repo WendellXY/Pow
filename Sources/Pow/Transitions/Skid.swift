@@ -81,15 +81,15 @@ struct Skid_Preview: PreviewableAnimation, PreviewProvider {
   static var content: some View {
     RoundedRectangle(cornerRadius: 8, style: .continuous)
       .fill(Color.orange)
-        .overlay {
+        .overlay (
             Text("Jell-O\nWorld")
                 .blendMode(.difference)
                 .offset(x: 2, y: 2)
-        }
+        )
         .compositingGroup()
-        .overlay {
+        .overlay (
             Text("Jell-O\nWorld")
-        }
+        )
         .font(.system(.headline, design: .rounded).weight(.black))
         .multilineTextAlignment(.center)
         .frame(width: 150, height: 150)

@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 15.0, *)
 public extension AnyChangeEffect {
     /// Specifies how a `pulse` change effect should render its shape style.
     enum PulseDrawingMode {
@@ -88,6 +89,7 @@ private final class ItemTimer: ObservableObject {
     }
 }
 
+@available(iOS 15.0, *)
 private struct PulseStrokeModifier<EffectShape: InsettableShape, EffectShapeStyle: ShapeStyle>: ViewModifier, Animatable, AnimatableModifier {
     var shape: EffectShape
 
@@ -106,7 +108,7 @@ private struct PulseStrokeModifier<EffectShape: InsettableShape, EffectShapeStyl
 
     public func body(content: Content) -> some View {
         content
-            .background {
+            .background (
                 GeometryReader { proxy in
                     let insetAmount = min(proxy.size.width, proxy.size.height) * 2.0
                     let lineWidth = max(1, insetAmount / 25)
@@ -128,13 +130,14 @@ private struct PulseStrokeModifier<EffectShape: InsettableShape, EffectShapeStyl
                     .compositingGroup()
                 }
                 .allowsHitTesting(false)
-            }
+            )
             .onChange(of: change) { c in
                 timer.queue(pulses: max(0, count))
             }
     }
 }
 
+@available(iOS 15.0, *)
 private struct PulseFillModifier<EffectShape: InsettableShape, EffectShapeStyle: ShapeStyle>: ViewModifier, Animatable, AnimatableModifier {
     var shape: EffectShape
 
@@ -153,7 +156,7 @@ private struct PulseFillModifier<EffectShape: InsettableShape, EffectShapeStyle:
 
     public func body(content: Content) -> some View {
         content
-            .background {
+            .background (
                 GeometryReader { proxy in
                     let insetAmount: CGFloat = min(proxy.size.width, proxy.size.height) * 2.0
 
@@ -173,13 +176,14 @@ private struct PulseFillModifier<EffectShape: InsettableShape, EffectShapeStyle:
                     }
                     .compositingGroup()
                 }
-            }
+            )
             .onChange(of: change) { _ in
                 timer.queue(pulses: max(0, count))
             }
     }
 }
 
+@available(iOS 15.0, *)
 private extension AnyTransition.MovingParts {
     static func pulseStroke(shape: some InsettableShape, style: some ShapeStyle, lineWidth: CGFloat, layer: ParticleLayer, insetAmount: CGFloat, count: Int, onCompletion: @escaping () -> Void) -> AnyTransition {
         .modifier(
@@ -224,6 +228,7 @@ private extension AnyTransition.MovingParts {
     }
 }
 
+@available(iOS 15.0, *)
 private struct PulseStrokeAnimationModifier<EffectShape: InsettableShape, EffectShapeStyle: ShapeStyle>: ViewModifier, Animatable, AnimatableModifier {
     var animatableData: CGFloat
 
@@ -266,6 +271,7 @@ private struct PulseStrokeAnimationModifier<EffectShape: InsettableShape, Effect
     }
 }
 
+@available(iOS 15.0, *)
 private struct PulseFillAnimationModifier<EffectShape: InsettableShape, EffectShapeStyle: ShapeStyle>: ViewModifier, Animatable, AnimatableModifier {
     var animatableData: CGFloat
 
@@ -313,6 +319,7 @@ private extension CGFloat {
 }
 
 #if os(iOS) && DEBUG
+@available(iOS 15.0, *)
 struct PulseEffect_Previews: PreviewProvider {
     struct Preview: View {
         @State

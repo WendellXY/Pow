@@ -45,7 +45,11 @@ struct HighlightChangeModifier<Value: Equatable>: ViewModifier {
             guard predicate(newValue), value != newValue else { return }
 
             guard lastUpdate.timeIntervalSinceNow < -cooldown else { return }
-            lastUpdate = .now
+            if #available(iOS 15, *) {
+                lastUpdate = .now
+            } else {
+                lastUpdate = Date()
+            }
 
             changeCount += 1
         }
@@ -67,6 +71,7 @@ struct HighlightChangeModifier<Value: Equatable>: ViewModifier {
 }
 
 #if os(iOS) && DEBUG
+@available(iOS 15.0, *)
 struct OnChangeEffectPreview_Previews: PreviewProvider {
     struct Preview: View {
         @State

@@ -3,6 +3,7 @@ import SwiftUI
 import SnapshotPreferences
 #endif
 
+@available(iOS 15.0, *)
 public extension AnyTransition.MovingParts {
     /// A transition that dissolves the view into many small particles.
     ///
@@ -54,6 +55,7 @@ public extension AnyTransition.MovingParts {
     }
 }
 
+@available(iOS 15.0, *)
 internal struct Vanish: ViewModifier, Animatable, AnimatableModifier {
     static let defaultAnimation: Animation = .easeOut(duration: 0.9)
 

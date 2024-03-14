@@ -1,6 +1,7 @@
 import SwiftUI
 import simd
 
+@available(iOS 15.0, *)
 public extension AnyTransition.MovingParts {
     /// A transition that shows a view with a ripple effect and a flurry of
     /// tint-colored particles.
@@ -165,6 +166,7 @@ struct Pop: AnimatableModifier, ProgressableAnimation, ViewModifier {
 }
 
 #if os(iOS) && DEBUG
+@available(iOS 15.0, *)
 struct Pop_Preview: PreviewableAnimation, PreviewProvider {
   static var animation: Pop {
     Pop(style: AnyShapeStyle(.tint), animatableData: 0)
